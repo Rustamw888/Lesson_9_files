@@ -1,0 +1,12 @@
+{
+  "name": "Rustam",
+  "surname": "Tyapaev",
+  "favorite_music": [
+    "Lamb of God",
+    "AC DC"
+  ],
+  "address": {
+    "street": "Komissarovskaya",
+    "house": 102
+  }
+}
