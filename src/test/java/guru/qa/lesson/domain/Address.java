@@ -1,4 +1,4 @@
-package guru.qa.domain;
+package guru.qa.lesson.domain;
 
 public class Address {
 

@@ -1,18 +1,13 @@
-package guru.qa;
+package guru.qa.lesson;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStream;
 import java.nio.file.Files;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static java.nio.charset.StandardCharsets.UTF_8;
-import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class SelenideFilesTest {
 
@@ -21,10 +16,10 @@ public class SelenideFilesTest {
         open("https://github.com/junit-team/junit5/blob/main/README.md");
 
         File downloadedFile = $("#raw-url").download();
-        try (InputStream is = new FileInputStream(downloadedFile)) {
-            assertThat(new String(is.readAllBytes(), UTF_8)).contains(
-                    "This repository is the home of the next generation of JUnit");
-        }
+//        try (InputStream is = new FileInputStream(downloadedFile)) {
+//            assertThat(new String(is.readAllBytes(), UTF_8)).contains(
+//                    "This repository is the home of the next generation of JUnit");
+//        }
         // Альтернативный способ чтения файла для использования в последующих проверках.
         String readString = Files.readString(downloadedFile.toPath(), UTF_8);
         Assertions.assertTrue(readString.contains("This repository is the home of the next generation of JUnit"));
